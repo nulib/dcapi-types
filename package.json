@@ -1,0 +1,20 @@
+{
+  "name": "dcapi-types",
+  "version": "2.0.0-alpha",
+  "description": "Northwestern University Libraries Digital Collections API Typescript types",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nulib/dcapi-types.git"
+  },
+  "author": "nulib",
+  "license": "Apache-2.0",
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/nulib/dcapi-types/issues"
+  },
+  "homepage": "https://github.com/nulib/dcapi-types#readme"
+}

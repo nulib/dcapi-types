@@ -1,1 +1,1 @@
-# dcapi-client
+# dcapi-types

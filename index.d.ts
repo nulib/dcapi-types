@@ -1,9 +1,11 @@
 import { components } from "./schemas"
 
 type Collection = components["schemas"]["Collection"]
+type CollectionRepresentativeImage = components["schemas"]["CollectionRepresentativeImage"]
 type ControlledTerm = components["schemas"]["ControlledTerm"]
 type ControlledTermWithRole = components["schemas"]["ControlledTermWithRole"]
 type FileSet = components["schemas"]["FileSet"]
+type FileSetBase = components["schemas"]["FileSetBase"]
 type FileSetRole = components["schemas"]["FileSetRole"]
 type LibraryUnit = components["schemas"]["LibraryUnit"]
 type NoteType = components["schemas"]["NoteType"]
@@ -20,9 +22,11 @@ type WorkType = components["schemas"]["WorkType"]
 
 export {
   Collection,
+  CollectionRepresentativeImage,
   ControlledTerm,
   ControlledTermWithRole,
   FileSet,
+  FileSetBase,
   FileSetRole,
   LibraryUnit,
   NoteType,

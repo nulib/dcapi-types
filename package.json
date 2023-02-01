@@ -1,6 +1,6 @@
 {
-  "name": "dcapi-types",
-  "version": "2.0.0-alpha",
+  "name": "@nulib/dcapi-types",
+  "version": "2.0.0pre",
   "description": "Northwestern University Libraries Digital Collections API Typescript types",
   "main": "index.js",
   "scripts": {

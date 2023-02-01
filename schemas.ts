@@ -86,7 +86,7 @@ export interface components {
      * @description Role of the file set 
      * @enum {string|null}
      */
-    FileSetRole: "Acess" | "Auiliary" | "Preservation" | "Supplemental" | null;
+    FileSetRole: "Access" | "Auxiliary" | "Preservation" | "Supplemental" | null;
     GenericIdLabel: {
       id: string;
       label: string;
@@ -101,6 +101,27 @@ export interface components {
      * @enum {string}
      */
     NoteType: "Awards," | "Bibliographical/Historical Note" | "Creation/Production Credits" | "General Note" | "Lanugage Note" | "Local Note" | "Performers" | "Statement of Responsibility" | "Venue/Event Date";
+    /** @description Pagination info for the current response */
+    PaginationInfo: {
+      /** @description Full URL to the next page of results */
+      next_url?: string;
+      /** @description Full URL to the previous page of results */
+      prev_url?: string;
+      /** @description Base URL to repeat this query for a given page */
+      query_url?: string;
+      /** @description Tokenized query to use in subsequent GET requests */
+      search_token?: string;
+      /** @description Index of current page of results */
+      current_page?: number;
+      /** @description Number of results per page */
+      limit?: number;
+      /** @description Starting index of first result on the current page */
+      offset?: number;
+      /** @description Total number of results */
+      total_hits?: number;
+      /** @description Total number of result pages */
+      total_pages?: number;
+    };
     /**
      * @description The preservation workflow applied to the resource 
      * @enum {string|null}
@@ -134,12 +155,6 @@ export interface components {
      * @enum {string|null}
      */
     WorkType: "Audio" | "Image" | "Video" | null;
-    /** @description A [IIIF Presentation v3.x](https://iiif.io/api/presentation/3.0/) Collection */
-    IiifPresentationCollection: Record<string, never>;
-    /** @description A [IIIF Presentation v3.x](https://iiif.io/api/presentation/3.0/) Manifest */
-    IiifPresentationManifest: Record<string, never>;
-    /** @description A single index document */
-    IndexDocument: Record<string, never>;
     /** @description A single work response */
     Work: {
       /** @description A summary of the resource */
@@ -297,32 +312,6 @@ export interface components {
       title: string | null;
       visibility: components["schemas"]["Visibility"];
       work_type: components["schemas"]["WorkType"];
-    };
-    OpenSearchResponse: {
-      /** @description An array of response documents */
-      data?: (components["schemas"]["IndexDocument"])[];
-      pagination?: components["schemas"]["PaginationInfo"];
-    };
-    /** @description Pagination info for the current response */
-    PaginationInfo: {
-      /** @description Full URL to the next page of results */
-      next_url?: string;
-      /** @description Full URL to the previous page of results */
-      prev_url?: string;
-      /** @description Base URL to repeat this query for a given page */
-      query_url?: string;
-      /** @description Tokenized query to use in subsequent GET requests */
-      search_token?: string;
-      /** @description Index of current page of results */
-      current_page?: number;
-      /** @description Number of results per page */
-      limit?: number;
-      /** @description Starting index of first result on the current page */
-      offset?: number;
-      /** @description Total number of results */
-      total_hits?: number;
-      /** @description Total number of result pages */
-      total_pages?: number;
     };
   };
 }

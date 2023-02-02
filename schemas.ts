@@ -207,9 +207,9 @@ export interface components {
       /** @description File sets associated with the resource */
       file_sets: (components["schemas"]["FileSetBase"])[];
       /** @description Name of the containing folder. */
-      folder_names: (string)[];
+      folder_name: (string)[];
       /** @description Number of the containing folder. */
-      folder_numbers: (string)[];
+      folder_number: (string)[];
       /** @description Describes what the original object is, not what it is about. */
       genre: (components["schemas"]["ControlledTerm"])[];
       /**

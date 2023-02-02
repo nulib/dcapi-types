@@ -18,7 +18,7 @@ export interface components {
       /** Format: date-time */
       modified_date: string;
       published: boolean;
-      representative_image?: components["schemas"]["CollectionRepresentativeImage"];
+      representative_image: components["schemas"]["CollectionRepresentativeImage"];
       /** Format: uri */
       thumbnail: string;
       title: string;
@@ -29,7 +29,7 @@ export interface components {
       work_id: string;
       /** Format: uri */
       url: string;
-    };
+    } | null;
     ControlledTerm: {
       id: string;
       facet: string;
@@ -69,11 +69,11 @@ export interface components {
       api_model: string;
       /** Format: date-time */
       create_date: string;
-      digests?: {
+      digests: ({
         [key: string]: string | undefined;
-      };
+      }) | null;
       description: string | null;
-      extracted_metadata?: Record<string, never>;
+      extracted_metadata: Record<string, unknown> | null;
       indexed_at: string | null;
       /** Format: date-time */
       modified_date: string;
@@ -90,7 +90,7 @@ export interface components {
     GenericIdLabel: {
       id: string;
       label: string;
-    };
+    } | null;
     /**
      * @description NUL Library Unit 
      * @enum {string|null}
@@ -133,13 +133,13 @@ export interface components {
      */
     RelatedUrlLabel: "Finding Aid" | "Hathi Trust" | "Related Information" | "Resource Guide" | null;
     /** @description Information about the representative image for the resource */
-    RepresentativeFileSet: {
+    RepresentativeFileSet: ({
       aspect_ratio: number;
       /** Format: uuid */
       id?: string | null;
       /** Format: uri */
       url: string;
-    };
+    }) | null;
     /**
      * @description Preservation status of the resource 
      * @enum {string|null}
@@ -179,14 +179,14 @@ export interface components {
       /** @description Alma bibliographic ID. */
       catalog_key: (string)[];
       /** @description The parent collection of the resource */
-      collection?: {
+      collection: ({
         /** @description UUID of the collection */
         id: string;
         /** @description Description of the collection */
         description?: string | null;
         /** @description Title of the collection */
         title: string;
-      };
+      }) | null;
       /** @description An entity responsible for making contributions to the resource */
       contributor: (components["schemas"]["ControlledTermWithRole"])[];
       /**
@@ -224,17 +224,17 @@ export interface components {
       /** Format: date-time */
       indexed_at: string | null;
       /** @description Associated ingest project */
-      ingest_project?: {
+      ingest_project: {
         /** Format: uuid */
         id: string;
         title: string;
-      };
+      } | null;
       /** @description Associated ingest sheet */
-      ingest_sheet?: {
+      ingest_sheet: {
         /** Format: uuid */
         id: string;
         title: string;
-      };
+      } | null;
       /** @description Keywords or tags used to describe this content. */
       keywords: (string)[];
       /** @description A language of the resource. */
@@ -243,7 +243,7 @@ export interface components {
       legacy_identifier: (string)[];
       library_unit: components["schemas"]["LibraryUnit"];
       /** @description Creative Commons licenses */
-      license?: components["schemas"]["GenericIdLabel"];
+      license: components["schemas"]["GenericIdLabel"];
       /** @description Place of publication. */
       location: (components["schemas"]["ControlledTerm"])[];
       /**
@@ -261,14 +261,14 @@ export interface components {
       physical_description_size: (string)[];
       preservation_level: components["schemas"]["PreservationLevel"];
       /** @description Project related information */
-      project: {
-        desc?: string | null;
-        cycle?: string | null;
-        manager?: string | null;
-        name?: string | null;
-        proposer?: string | null;
-        task_number?: string | null;
-      };
+      project: ({
+        desc: string | null;
+        cycle: string | null;
+        manager: string | null;
+        name: string | null;
+        proposer: string | null;
+        task_number: string | null;
+      }) | null;
       /** @description Location of Physical Object // will also include messy dates. Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource. */
       provenance: (string)[];
       /** @description Resource is available on Digital Collections. */
@@ -281,11 +281,11 @@ export interface components {
         url: string;
         label: components["schemas"]["RelatedUrlLabel"];
       })[];
-      representative_file_set?: components["schemas"]["RepresentativeFileSet"];
+      representative_file_set: components["schemas"]["RepresentativeFileSet"];
       /** @description A person or organization owning or managing rights over the resource. */
       rights_holder: (string)[];
       /** @description Expresses the copyright status of the resource. */
-      rights_statement?: components["schemas"]["GenericIdLabel"];
+      rights_statement: components["schemas"]["GenericIdLabel"];
       /** @description Sometimes used with Distincitive Collections materials */
       scope_and_contents: (string)[];
       /** @description Sometimes used with Distincitive Collections materials. Used for archival series and subseries information. */

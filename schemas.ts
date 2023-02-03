@@ -24,12 +24,12 @@ export interface components {
       title: string;
       visibility: components["schemas"]["Visibility"];
     };
-    CollectionRepresentativeImage: {
+    CollectionRepresentativeImage: ({
       /** Format: uuid */
-      work_id: string;
+      work_id: string | null;
       /** Format: uri */
       url: string;
-    } | null;
+    }) | null;
     ControlledTerm: {
       id: string;
       facet: string;

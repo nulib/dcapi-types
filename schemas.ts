@@ -47,6 +47,7 @@ export interface components {
     FileSetBase: {
       /** Format: uuid */
       id: string;
+      accession_number: string;
       duration: number | null;
       height: number | null;
       label: string;
@@ -64,7 +65,6 @@ export interface components {
       width: number | null;
     };
     FileSet: components["schemas"]["FileSetBase"] & ({
-      accession_number: string;
       api_link: string;
       api_model: string;
       /** Format: date-time */
@@ -91,6 +91,12 @@ export interface components {
       id: string;
       label: string;
     } | null;
+    /** @description Global DC API properties */
+    Info: {
+      description: string;
+      name: string;
+      version: string;
+    };
     /**
      * @description NUL Library Unit 
      * @enum {string|null}
@@ -252,9 +258,9 @@ export interface components {
        */
       modified_date: string;
       notes: ({
-        note: string;
-        type: components["schemas"]["NoteType"];
-      })[];
+          note: string;
+          type: components["schemas"]["NoteType"];
+        })[];
       /** @description The material or physical carrier of the resource. */
       physical_description_material: (string)[];
       /** @description The size or duration of the resource. */
@@ -277,10 +283,10 @@ export interface components {
       publisher: (string)[];
       /** @description URL of a related resource. */
       related_url: ({
-        /** Format: uri */
-        url: string;
-        label: components["schemas"]["RelatedUrlLabel"];
-      })[];
+          /** Format: uri */
+          url: string;
+          label: components["schemas"]["RelatedUrlLabel"];
+        })[];
       representative_file_set: components["schemas"]["RepresentativeFileSet"];
       /** @description A person or organization owning or managing rights over the resource. */
       rights_holder: (string)[];

@@ -58,6 +58,7 @@ export interface components {
       /** Format: uuid */
       id: string;
       accession_number: string;
+      description: string | null;
       duration: number | null;
       height: number | null;
       label: string;
@@ -82,7 +83,6 @@ export interface components {
       digests: ({
         [key: string]: string | undefined;
       }) | null;
-      description: string | null;
       extracted_metadata: Record<string, unknown> | null;
       indexed_at: string | null;
       /** Format: date-time */

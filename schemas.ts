@@ -101,9 +101,11 @@ export interface components {
       id: string;
       label: string;
     } | null;
-    /** @description Global DC API properties */
+    /** @description Additional Information */
     Info: {
       description: string;
+      /** Format: date-time */
+      link_expiration?: string | null;
       name: string;
       version: string;
     };

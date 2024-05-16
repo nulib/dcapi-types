@@ -227,7 +227,6 @@ export interface components {
       embedding: number[];
       /** @description The name of the inference model used to generate the `embedding` from the resource's content. */
       embedding_model: string;
-      download_url: string | null;
       /** @description File sets associated with the resource. */
       file_sets: components["schemas"]["FileSetBase"][];
       /** @description Name of the containing folder. */

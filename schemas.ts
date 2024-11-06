@@ -19,6 +19,8 @@ export interface components {
             finding_aid_url: string | null;
             /** Format: uuuid */
             id: string;
+            /** Format: uri */
+            iiif_collection: string | null;
             /** Format: date-time */
             indexed_at: string | null;
             keywords: string[];

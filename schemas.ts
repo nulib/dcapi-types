@@ -60,6 +60,8 @@ export interface components {
             description: string | null;
             download_url: string | null;
             duration: number | null;
+            /** Format: uuid */
+            group_with: string | null;
             height: number | null;
             label: string;
             mime_type: string | null;
@@ -83,7 +85,7 @@ export interface components {
             digests: {
                 [key: string]: string;
             } | null;
-            extracted_metadata: Record<string, never>;
+            extracted_metadata: Record<string, never> | null;
             indexed_at: string | null;
             /** Format: date-time */
             modified_date: string;

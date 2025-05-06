@@ -190,6 +190,8 @@ export interface components {
             ark: string;
             /** @description Associated batch update operations */
             batch_ids: string[];
+            /** @description The IIIF behavior of the resource */
+            behavior: string | null;
             /** @description Physical box name. Sometimes used with Distinctive Collections materials. */
             box_name: string[];
             /** @description Physical box number. Sometimes used with Distinctive Collections materials. */

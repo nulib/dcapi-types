@@ -1,0 +1,6 @@
+# See docs https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#example-of-a-codeowners-file
+
+# Whenever a PR is opened, it will assign the repodev-code-review team
+# which is set up to auto assign members as a reviewer
+# https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team#about-auto-assignment
+* @nulib/repodev-code-review

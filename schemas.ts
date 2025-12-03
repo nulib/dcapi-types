@@ -85,6 +85,7 @@ export interface components {
             digests: {
                 [key: string]: string;
             } | null;
+            annotations?: components["schemas"]["Annotation"][] | null;
             extracted_metadata: Record<string, never> | null;
             indexed_at: string | null;
             /** Format: date-time */
@@ -99,6 +100,14 @@ export interface components {
          * @enum {string|null}
          */
         FileSetRole: "Access" | "Auxiliary" | "Preservation" | "Supplemental" | null;
+        Annotation: {
+            /** Format: uuid */
+            id: string;
+            type: string;
+            language: string[];
+            content: string;
+            model: string;
+        };
         GenericIdLabel: {
             id: string;
             label: string;

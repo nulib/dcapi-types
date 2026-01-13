@@ -184,6 +184,18 @@ export interface components {
          * @enum {string|null}
          */
         WorkType: "Audio" | "Image" | "Video" | null;
+        /** @description Geographic points for IIIF navPlace construction. */
+        NavPlace: components["schemas"]["NavPlaceEntry"][];
+        NavPlaceEntry: {
+            /** @description Identifier for the place. */
+            id: string | null;
+            /** @description Human-readable label for the place. */
+            label: string;
+            /** @description Optional summary for the place. */
+            summary: string | null;
+            /** @description Longitude/latitude coordinates. */
+            coordinates: number[];
+        };
         /** @description A single work response */
         Work: {
             /** @description A summary of the resource */
@@ -283,6 +295,7 @@ export interface components {
             license: components["schemas"]["GenericIdLabel"];
             /** @description Place of publication. */
             location: components["schemas"]["ControlledTerm"][];
+            nav_place: components["schemas"]["NavPlace"];
             /**
              * Format: date-time
              * @description Date resource last modified in repository

@@ -148,8 +148,13 @@ export interface components {
             query_url?: string;
             /** @description Tokenized query to use in subsequent GET requests */
             search_token?: string;
-            /** @description The field by which results are collapsed, if applicable. */
-            collapsed_by?: string;
+            /** @description Result grouping info, if applicable. */
+            collapsed_by?: {
+                /** @description The name of the field by which results are grouped. */
+                field?: string;
+                /** @description The total number of unique collapsed field groups. */
+                total_hits?: number;
+            };
             /** @description Index of current page of results */
             current_page: number;
             /** @description Number of results per page */

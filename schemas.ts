@@ -130,15 +130,7 @@ export interface components {
          * @enum {string}
          */
         NoteType: "Awards" | "Bibliographical/Historical Note" | "Creation/Production Credits" | "General Note" | "Lanugage Note" | "Local Note" | "Performers" | "Statement of Responsibility" | "Venue/Event Date";
-        /**
-         * @description Pagination info for the current response. NOTE: If results are
-         *     collapsed, the length of the `data` array may be longer than the
-         *     requested `limit`. The `total_hits` value represents the number of
-         *     collapsed groups, not the total number of hits across all groups.
-         *     Collapsing will also have an effect on the `offset` value, which
-         *     represents the starting index of the first collapsed group on the
-         *     current page.
-         */
+        /** @description Pagination info for the current response. */
         PaginationInfo: {
             /** @description Full URL to the next page of results */
             next_url?: string;
@@ -148,23 +140,16 @@ export interface components {
             query_url?: string;
             /** @description Tokenized query to use in subsequent GET requests */
             search_token?: string;
-            /** @description Result grouping info, if applicable. */
-            collapsed_by?: {
-                /** @description The name of the field by which results are grouped. */
-                field?: string;
-                /** @description The total number of unique collapsed field groups. */
-                total_hits?: number;
-            };
             /** @description Index of current page of results */
-            current_page: number;
+            current_page?: number;
             /** @description Number of results per page */
-            limit: number;
+            limit?: number;
             /** @description Starting index of first result on the current page */
-            offset: number;
+            offset?: number;
             /** @description Total number of results */
-            total_hits: number;
+            total_hits?: number;
             /** @description Total number of result pages */
-            total_pages: number;
+            total_pages?: number;
         };
         /**
          * @description The preservation workflow applied to the resource
@@ -283,15 +268,9 @@ export interface components {
             id: string;
             /** @description Identifiers for the object */
             identifier: string[];
-            /**
-             * Format: uri
-             * @description IIIF url manifest for the work
-             */
+            /** Format: uri */
             iiif_manifest: string | null;
-            /**
-             * Format: date-time
-             * @description Date/time of last index
-             */
+            /** Format: date-time */
             indexed_at: string | null;
             /** @description Associated ingest project */
             ingest_project: {
